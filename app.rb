@@ -57,12 +57,13 @@ post '/final' do
 	favorite1 = params[:user_favorite_numbers1]
 	favorite2 = params[:user_favorite_numbers2]
 	favorite3 = params[:user_favorite_numbers3]
+    "#{params[:favorite1].to_i + params[:favorite2].to_i + params[:favorite3]}"
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
-	sum = params[:user_favorite_numbers1 + 
-		:user_favorite_numbers2 + :user_favorite_numbers3]
 	erb :final_results
-	
-end	
-                    
+end
+
+get "/add/:favorite1/:favorite2/:favorite3" do |a, b, c|
+  "#{a.to_i + b.to_i + c.to_i}"
+end
