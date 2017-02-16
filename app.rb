@@ -29,9 +29,9 @@ post '/age' do
 end
 
 post '/favorite' do
-	favorite1 = params[:user_favorite_numbers]
-	favorite2 = params[:user_favorite_numbers]
-	favorite3 = params[:user_favorite_numbers]
+	favorite1 = params[:user_favorite_numbers1]
+	favorite2 = params[:user_favorite_numbers2]
+	favorite3 = params[:user_favorite_numbers3]
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
@@ -54,10 +54,15 @@ end
 
 post '/final' do
 	final = params[:final_user_results]
-	favorite = params[:user_favorite_numbers]
+	favorite1 = params[:user_favorite_numbers1]
+	favorite2 = params[:user_favorite_numbers2]
+	favorite3 = params[:user_favorite_numbers3]
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
+	sum = params[:user_favorite_numbers1 + 
+		:user_favorite_numbers2 + :user_favorite_numbers3]
 	erb :final_results
-	sum = favorite1 + favorite2 + favorite3
+	
 end	
+                    
