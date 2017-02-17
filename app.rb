@@ -5,7 +5,7 @@ get "/" do
 	erb :get_name 
 end
 
-post '/name' do
+post '/name' do # these are routes information must be passes to other routes to become available
 	name = params[:user_name]
 	#session[:name] = params[:user_name]
 	erb :location, :locals => {:name => name}
