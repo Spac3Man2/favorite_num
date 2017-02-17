@@ -35,11 +35,11 @@ post '/favorite' do
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
-    "#{name} your favorite numbers are? #{favorite1} + #{favorite2} + #{favorite3}"	
     erb :final_results, :locals => {:name => name, 
         :location => location, :age => age,
         :favorite1 => favorite1, :favorite2 => favorite2,
         :favorite3 => favorite3}
+	
 end
 
 # post '/sum' do
@@ -53,17 +53,16 @@ end
 # end
 
 post '/final' do
-	final = params[:final_user_results]
+    final = params[:final_user_results]
 	favorite1 = params[:user_favorite_numbers1]
 	favorite2 = params[:user_favorite_numbers2]
 	favorite3 = params[:user_favorite_numbers3]
-    "#{params[:favorite1].to_i + params[:favorite2].to_i + params[:favorite3]}"
+	#puts "#{params[:favorite1].to_i + params[:favorite2].to_i + params[:favorite3]}"
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
 	erb :final_results
 end
 
-get "/add/:favorite1/:favorite2/:favorite3" do |a, b, c|
-  "#{a.to_i + b.to_i + c.to_i}"
-end
+# sum = params[:user_favorite_numbers1].to_i + params[:user_favorite_numbers2].to_i + params[:user_favorite_numbers3]
+# sum = params[:user_favorite_numbers1].to_i + params[:user_favorite_numbers2].to_i + params[:user_favorite_numbers3]
