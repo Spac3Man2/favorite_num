@@ -16,7 +16,7 @@ post '/location' do
     #session[:location] = params[:user_location]
     name = params[:user_name]
     "#{name} your location is #{location}"
-    erb :get_age , :locals => {:name => name, :location => location}
+    erb :get_age, :locals => {:name => name, :location => location}
 
     #{}"Hello #{name}"
 end
@@ -27,7 +27,7 @@ post '/age' do
 	name = params[:user_name]
 	location = params[:user_location]
 	"#{name} your age is #{age}"
-	erb :get_favorite_numbers, :locals => {:name => name, :location => location, :age => age}
+	erb :get_favorite_numbers, :locals => {:name => name,     :location => location, :age => age}
 	
 end
 
@@ -35,10 +35,12 @@ post '/favorite' do
 	favorite1 = params[:user_favorite_numbers1]
 	favorite2 = params[:user_favorite_numbers2]
 	favorite3 = params[:user_favorite_numbers3]
+	
 	sum = favorite1.to_i + favorite2.to_i + favorite3.to_i
     #session[:favorite1] = params[:user_favorite_numbers1]
 	#session[:favorite2] = params[:user_favorite_numbers2]
 	#session[:favorite3] = params[:user_favorite_numbers3]
+    #sum = params[:user_sum]
     name = params[:user_name]
 	location = params[:user_location]
 	age = params[:user_age]
